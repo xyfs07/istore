@@ -74,7 +74,7 @@ sed -i \
 	rm -rf "feeds/packages/net/$package_name" ) || true
 
 
-ln -sf "$dir" "package/$package_name"
+ln -sf "$dir"/luci/luci-app-store "package/$package_name"
 
 ./scripts/feeds install -a
 
