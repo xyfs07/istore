@@ -52,8 +52,7 @@ update() {
     fi
 
     fcurl -o ${OPKG_CONF_DIR}/meta.conf "${FEEDS_SERVER}/all/meta.conf" && \
-      fcurl -o ${OPKG_CONF_DIR}/all.conf "${FEEDS_SERVER}/all/isfeeds.conf" && \
-      fcurl -o ${OPKG_CONF_DIR}/arch.conf "${FEEDS_SERVER}/${ARCH}/isfeeds.conf" || \
+      fcurl -o ${OPKG_CONF_DIR}/all.conf "${FEEDS_SERVER}/all/isfeeds.conf" || \
       return 1
 
     opkg -f ${IS_ROOT}/etc/opkg_o.conf --offline-root ${IS_ROOT} update
